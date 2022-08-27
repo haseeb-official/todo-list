@@ -11,11 +11,10 @@ function Todo({ todo, checkBoxHandler, deleteBtnHandler }) {
           <input
             className='mx-5 bg-color-7 checked:bg-color-5 w-8 h-8 rounded-full appearance-none'
             type='checkbox'
+            defaultChecked={completed}
             onChange={() => checkBoxHandler(id)}
           />
-          <span className={`${todo.completed ? 'line-through' : ''}`}>
-            {text}
-          </span>
+          <span className={`${completed ? 'line-through' : ''}`}>{text}</span>
         </div>
         <button
           className='bg-color-5 h-full w-16 rounded-r-sm'

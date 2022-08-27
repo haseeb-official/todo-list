@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Todo from './components/Todo'
 
 function App() {
+  const [task, setTask] = useState('')
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    setTodos(todosSeeder)
+  }, [])
+
+  const updateTask = (e) => {
+    setTask(e.target.value)
+  }
+
   return (
     <div>
       <h1>TODO-LIST</h1>
-      <input type='text' />
+      <input type='text' value={task} onChange={updateTask} />
       <button>add</button>
-      <p>3 pending works remaining...</p>
+      <p>{todos.length} pending works remaining...</p>
       <ul>
-        {todosSeeder.map((todo) => (
+        {todos.map((todo) => (
           <Todo key={todo.id} todo={todo} />
         ))}
       </ul>

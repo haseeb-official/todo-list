@@ -1,4 +1,5 @@
 import React from 'react'
+import Todo from './components/Todo'
 
 function App() {
   return (
@@ -8,21 +9,9 @@ function App() {
       <button>add</button>
       <p>3 pending works remaining...</p>
       <ul>
-        <li>
-          <input type='checkbox' />
-          <span>this is my first task</span>
-          <button>delete</button>
-        </li>
-        <li>
-          <input type='checkbox' />
-          <span>this is my second task</span>
-          <button>delete</button>
-        </li>
-        <li>
-          <input type='checkbox' />
-          <span>this is my third task</span>
-          <button>delete</button>
-        </li>
+        {todosSeeder.map((todo) => (
+          <Todo key={todo.id} todo={todo} />
+        ))}
       </ul>
       <button>clear</button>
     </div>
@@ -30,3 +19,21 @@ function App() {
 }
 
 export default App
+
+let todosSeeder = [
+  {
+    id: 1,
+    text: 'this is my first task',
+    completed: false,
+  },
+  {
+    id: 2,
+    text: 'this is my second task',
+    completed: true,
+  },
+  {
+    id: 3,
+    text: 'this is my third task',
+    completed: false,
+  },
+]

@@ -57,6 +57,8 @@ function App() {
   const currentDate = `${day}-${month}-${year}`
   const currentDay = dayNames[date.getDay()]
 
+  const completedTodos = todos.filter((todo) => !todo.completed)
+
   return (
     <div className='bg-color-1 w-screen h-screen flex justify-center items-center'>
       <main className='bg-color-4 w-[600px] h-[800px] flex flex-col items-center rounded-md shadow-2xl'>
@@ -81,7 +83,7 @@ function App() {
             </button>
           </div>
           <p className='w-4/5 text-lg text-color-3 font-medium'>
-            You have {todos.length} pending items.
+            You have {completedTodos.length} pending items.
           </p>
         </div>
         <ul className='h-2/5 w-4/5 mt-4 overflow-auto scrollbar'>

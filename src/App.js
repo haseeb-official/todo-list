@@ -38,14 +38,33 @@ function App() {
     setTodos([])
   }
 
+  let dayNames = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ]
+
+  const date = new Date()
+
+  let day = date.getDate()
+  let month = date.getMonth() + 1
+  let year = date.getFullYear()
+
+  const currentDate = `${day}-${month}-${year}`
+  const currentDay = dayNames[date.getDay()]
+
   return (
     <div className='bg-color-1 w-screen h-screen flex justify-center items-center'>
       <main className='bg-color-4 w-[600px] h-[800px] flex flex-col items-center rounded-md shadow-2xl'>
         <div className='w-full flex flex-col items-center'>
           <h1 className='text-3xl text-color-3 w-4/5 mt-24 font-medium'>
-            Thursday
+            {currentDay}
             <br />
-            12-08-2022
+            {currentDate}
           </h1>
           <div className='w-4/5 h-16 m-10 items-center flex justify-between'>
             <input

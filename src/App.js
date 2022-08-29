@@ -81,23 +81,6 @@ function App() {
         </button>
       </main>
     </div>
-    // <div>
-    //   <h1>TODO-LIST</h1>
-    //   <input type='text' value={task} onChange={updateTask} />
-    //   <button onClick={addBtnHandler}>add</button>
-    //   <p>{todos.length} pending works remaining...</p>
-    //   <ul>
-    // {todos.map((todo) => (
-    //   <Todo
-    //     key={todo.id}
-    //     todo={todo}
-    //     deleteBtnHandler={deleteBtnHandler}
-    //     checkBoxHandler={checkBoxHandler}
-    //   />
-    // ))}
-    //   </ul>
-    //   <button onClick={clearBtnHandler}>clear</button>
-    // </div>
   )
 }
 
